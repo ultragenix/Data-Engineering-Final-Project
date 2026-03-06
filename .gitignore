@@ -1,0 +1,88 @@
+# ============================================
+# DVF+ La Réunion — .gitignore
+# ============================================
+
+# ---------- Secrets & Environment ----------
+.env
+.env.local
+.env.production
+# Keep the template tracked:
+# !.env.example
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.python-version
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ---------- dbt ----------
+dbt_dvf/target/
+dbt_dvf/dbt_packages/
+dbt_dvf/logs/
+dbt_dvf/profiles.yml
+
+# ---------- Docker ----------
+# Volumes persistants (données locales)
+docker/postgres/data/
+docker/metabase/data/
+docker/kestra/data/
+
+# ---------- Metabase ----------
+metabase.db/
+*.db.mv.db
+*.db.trace.db
+
+# ---------- PostgreSQL ----------
+*.sql.gz
+*.dump
+*.pgdump
+
+# ---------- Données brutes (trop volumineuses) ----------
+data/
+*.csv
+*.csv.gz
+*.gpkg
+*.geojson
+# Garder le GeoJSON des communes (petit fichier essentiel) :
+!geojson/communes_974.geojson
+
+# ---------- IDE ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Logs ----------
+*.log
+logs/
+
+# ---------- Jupyter (si exploration) ----------
+.ipynb_checkpoints/
+*.ipynb
+
+# ---------- Node (si Metabase custom) ----------
+node_modules/
